@@ -85,7 +85,7 @@ defineProps({
         color: $color-primary;
 
         &:hover:not(:disabled) {
-            background: darken($color-primary-xlight, 4%);
+            background: #c7d2fe;
         }
     }
 
@@ -105,7 +105,7 @@ defineProps({
         color: #fff;
 
         &:hover:not(:disabled) {
-            background: darken($color-danger, 8%);
+            background: #dc2626;
         }
     }
 
