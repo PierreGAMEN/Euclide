@@ -70,7 +70,21 @@ export const CURRICULUM = [
       {
         id: 'tale',
         label: 'Terminale',
-        chapters: [],
+        chapters: [
+            { id: 'T-1', 
+                title: 'Second degré', 
+                urls: ['https://www.maths-et-tiques.fr/telech/19SecdegP1M.pdf', 'https://www.maths-et-tiques.fr/telech/19SecdegP2M.pdf' ], 
+                summary: `
+- Définition : f(x) = ax² + bx + c avec a ≠ 0 (aussi appelé trinôme) ; domaine ℝ
+- Forme canonique : f(x) = a(x − α)² + β avec α = −b/(2a) et β = f(−b/(2a)) = −(b²−4ac)/(4a) ; obtenue par complétion du carré
+- Parabole : a > 0 → branches vers le haut (minimum en α) ; a < 0 → branches vers le bas (maximum en α) ; axe de symétrie x = α ; sommet (α ; β)
+- Discriminant : Δ = b² − 4ac ; si Δ < 0 : pas de racine réelle ; si Δ = 0 : racine double x₀ = −b/(2a) ; si Δ > 0 : deux racines x₁ = (−b−√Δ)/(2a) et x₂ = (−b+√Δ)/(2a)
+- Factorisation : Δ < 0 → impossible sur ℝ ; Δ = 0 → a(x−x₀)² ; Δ > 0 → a(x−x₁)(x−x₂)
+- Somme et produit des racines : S = −b/a et P = c/a
+- Signe du trinôme : si Δ < 0, signe constant égal au signe de a ; si Δ ≥ 0, le trinôme est du signe de a à l'extérieur des racines et de signe opposé entre les racines
+- Types de problèmes : mise en forme canonique, résolution d'équation/inéquation du second degré, étude de signe, position relative de deux courbes (étude du signe de f−g), déterminer un trinôme connaissant ses racines et un point
+- Vigilance : ne pas confondre α (abscisse du sommet) et β (valeur de l'extremum) ; bien ramener une inéquation à la forme trinôme ≤/≥ 0 avant d'appliquer le tableau de signes ; le signe de a détermine le sens des inégalités dans le tableau ; démonstration de la formule des racines par la forme canonique est au programme` },
+        ],
       },
     ],
   },
