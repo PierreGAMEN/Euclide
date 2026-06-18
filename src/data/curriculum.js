@@ -16,6 +16,21 @@ export const CURRICULUM = [
             ],
             summary: `Numération de position : la valeur d'un chiffre dépend de son rang (unités, dizaines, centaines, mille, millions…). Nombre décimal = partie entière + partie décimale (ex : 52,493 = 52 + 0,493). Rangs décimaux : dixièmes, centièmes, millièmes, dix-millièmes (la virgule repère le rang des unités). Fraction décimale : fraction de dénominateur 10, 100, 1000… ; 2,3 = 23/10 ; 45,67 = 4567/100. Décomposition selon les rangs : 453,51 = (4×100)+(5×10)+(3×1)+(5×1/10)+(1×1/100). Demi-droite graduée : abscisse d'un point, notation A(3) ; placer un point à partir de son abscisse. Comparer : aligner la virgule, ajouter des zéros inutiles si nécessaire, comparer chiffre par chiffre (8,32 < 8,40). Encadrer : trouver deux valeurs consécutives (à l'unité, au dixième…) encadrant le nombre ; arrondir = choisir la plus proche. Intercaler : ajouter des zéros pour disposer de graduations intermédiaires. Vigilance : ne pas supprimer les zéros utiles (5,08 ≠ 5,8) ; ne pas confondre rang du chiffre et valeur ; 52,493 contient 524 dixièmes (pas seulement 4).`,
           },
+          {
+            id: '6-2',
+            title: 'Addition, soustraction, multiplication',
+            urls: ['https://www.maths-et-tiques.fr/telech/25Operations.pdf'
+            ],
+            summary: `- Vocabulaire : addition (termes → somme), soustraction (termes → différence), multiplication (facteurs → produit)
+- Règle 1 : additions et soustractions uniquement → calcul de gauche à droite
+- Règle 2 : parenthèses → on calcule en premier ce qui est entre parenthèses
+- Règle 3 : parenthèses doubles → on commence par les parenthèses les plus intérieures
+- Priorité globale : parenthèses > multiplication > addition/soustraction (gauche à droite)
+- Addition/soustraction posée : aligner les virgules, compléter avec des zéros si nécessaire
+- Multiplication posée : ignorer la virgule, effectuer la multiplication en nombres entiers, puis placer la virgule dans le résultat en comptant le total de chiffres après la virgule dans les deux facteurs
+- Types de problèmes : calcul d'expressions avec plusieurs opérations, pose et calcul d'opérations sur décimaux, identification du vocabulaire
+- Vigilance : ne pas effectuer gauche-droite quand il y a des parenthèses ou une multiplication ; mal placer la virgule dans le produit (oublier de sommer les chiffres après virgule des deux facteurs) ; oublier d'aligner les virgules à l'addition/soustraction`,
+          },
           // { id: '6-2', title: '...', urls: [], summary: '' },
         ],
       },
