@@ -185,11 +185,15 @@ function handleClear() {
         border-radius: $radius-md;
         padding: $spacing-md;
         font-family: $font-mono;
-        font-size: $text-sm;
+        font-size: 16px; 
         line-height: 1.6;
         color: $color-text-primary;
         background: $color-bg-card;
         resize: vertical;
+
+        @include sm {
+            font-size: $text-sm;
+        }
 
         &:focus {
             outline: none;
