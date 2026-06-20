@@ -68,6 +68,9 @@
                         <BaseMath :text="exercise.correction" />
                     </div>
                 </div>
+                <!-- Brouillon -->
+                <DraftEditor v-if="currentExerciseId" :model-value="getCurrentDraft()"
+                    @update:model-value="handleDraftUpdate" />
             </div>
         </section>
 
@@ -112,6 +115,8 @@
                         <BaseMath :text="selectedEntry.correction" />
                     </div>
                 </div>
+                <!--brouillon -->
+                <DraftEditor :model-value="selectedEntry.draft || ''" @update:model-value="handleDraftUpdate" />
                 <BaseButton variant="ghost" size="sm" @click="selectedEntry = null">
                     Fermer
                 </BaseButton>
@@ -130,6 +135,7 @@ import { useExerciseHistory } from '@/composables/useExerciseHistory'
 import BaseTag from '@/components/ui/BaseTag.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseMath from '@/components/ui/BaseMath.vue'
+import DraftEditor from '@/components/exercise/DraftEditor.vue'
 
 const props = defineProps({
     levelId: { type: String, required: true },
@@ -138,12 +144,13 @@ const props = defineProps({
 
 const { chapterStatus, setStatus } = useProgress()
 const { exercise, loading, error, generate, reset } = useExerciseGenerator()
-const { getChapterHistory, saveExercise, clearChapterHistory, formatDate } = useExerciseHistory()
+const { getChapterHistory, saveExercise, clearChapterHistory, updateDraft, formatDate } = useExerciseHistory()
 
 const difficulty = ref('application')
 const showCorrection = ref(false)
 const showHistoryCorrection = ref(false)
 const selectedEntry = ref(null)
+const currentExerciseId = ref(null)
 
 const currentBlock = computed(() =>
     CURRICULUM.find(b => b.levels.some(l => l.id === props.levelId))
@@ -167,18 +174,33 @@ async function handleGenerate() {
     await generate(chapter.value, currentLevel.value?.label, difficulty.value)
 
     if (exercise.value) {
-        saveExercise(props.chapterId, {
+        const entry = saveExercise(props.chapterId, {
             difficulty: difficulty.value,
             enonce: exercise.value.enonce,
             correction: exercise.value.correction,
         })
+        currentExerciseId.value = entry.id
     }
 }
 
 function openHistoryEntry(entry) {
     selectedEntry.value = entry
+    currentExerciseId.value = entry.id
     showHistoryCorrection.value = false
     window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+function handleDraftUpdate(content) {
+    if (currentExerciseId.value) {
+        updateDraft(props.chapterId, currentExerciseId.value, content)
+    }
+}
+
+function getCurrentDraft() {
+    if (!currentExerciseId.value) return ''
+    const entries = getChapterHistory(props.chapterId)
+    const entry = entries.find(e => e.id === currentExerciseId.value)
+    return entry?.draft || ''
 }
 </script>
 

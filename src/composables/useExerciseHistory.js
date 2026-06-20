@@ -35,6 +35,7 @@ export function useExerciseHistory() {
       difficulty,
       enonce,
       correction,
+      draft: '',
       generatedAt: new Date().toISOString(),
     }
 
@@ -42,7 +43,6 @@ export function useExerciseHistory() {
       history.value[chapterId] = []
     }
 
-    // On garde les 10 derniers exercices par chapitre max
     history.value[chapterId] = [entry, ...history.value[chapterId]].slice(0, 10)
 
     saveHistory(history.value)
@@ -60,6 +60,29 @@ export function useExerciseHistory() {
     saveHistory(history.value)
   }
 
+  // ─── BROUILLON ───────────────────────────────────────────────────────────
+
+  function updateDraft(chapterId, exerciseId, content) {
+    const entries = history.value[chapterId]
+    if (!entries) return
+
+    const entry = entries.find(e => e.id === exerciseId)
+    if (!entry) return
+
+    entry.draft = content
+    saveHistory(history.value)
+  }
+
+  function clearDraft(chapterId, exerciseId) {
+    updateDraft(chapterId, exerciseId, '')
+  }
+
+  function getDraft(chapterId, exerciseId) {
+    const entries = history.value[chapterId]
+    const entry = entries?.find(e => e.id === exerciseId)
+    return entry?.draft || ''
+  }
+
   function formatDate(isoString) {
     return new Date(isoString).toLocaleDateString('fr-FR', {
       day: 'numeric',
@@ -74,6 +97,9 @@ export function useExerciseHistory() {
     saveExercise,
     deleteExercise,
     clearChapterHistory,
+    updateDraft,
+    clearDraft,
+    getDraft,
     formatDate,
   }
 }
