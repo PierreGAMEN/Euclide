@@ -146,6 +146,98 @@ export const CURRICULUM = [
 - Position relative de deux courbes : étudier le signe de la différence h(x) = f(x) − g(x)
 - Problème d'optimisation : exprimer la fonction à optimiser (ex : bénéfice = recette − coût), dériver, étudier le signe, lire l'extremum dans le tableau de variations
 - Vigilance : bien vérifier que le carré (x+1)² ou similaire est toujours positif pour conclure sur le signe de f' sans calcul supplémentaire ; ne pas oublier de calculer f(c) pour donner la valeur de l'extremum, pas seulement sa position`
+},
+{
+  id: '1-6',
+  title:'Fonction exponentielle',
+  urls: ['https://www.maths-et-tiques.fr/telech/19ExpoPM.pdf'],
+  summary:`Chapitre : Fonction exponentielle (1re/Tle)
+- Définition : unique fonction f dérivable sur ℝ telle que f'=f et f(0)=1, notée exp puis e^x ; exp(1)=e≈2,718
+- Propriétés algébriques : e^0=1, e^x>0, e^(x+y)=e^x×e^y, e^(x-y)=e^x/e^y, e^(-x)=1/e^x, (e^x)^n=e^(nx)
+- Dérivée : (e^x)'=e^x ; pour t↦e^(kt) : dérivée = k×e^(kt) ; fonction strictement croissante sur ℝ (car (e^x)'>0)
+- Sens de variation de t↦e^(kt) : croissante si k>0, décroissante si k<0
+- Équations/inéquations : e^a=e^b ⟺ a=b ; e^a<e^b ⟺ a<b (ramener à comparaison des exposants)
+- Dérivation de produits/quotients impliquant e^x : u(x)v(x) et u(x)/v(x) avec formules usuelles (u'v+uv', (u'v-uv')/v²)
+- Lien suite géométrique : e^(na) = (e^a)^n, donc (e^(na)) est géométrique de raison e^a
+- Notations : exp(x) puis e^x, e (nombre d'Euler), e^(kt) pour modélisation (temps t, taux k)
+- Types de problèmes : simplifier une écriture avec exposants, résoudre équation/inéquation exponentielle, dériver et étudier une fonction (tableau de variations, tangente), modélisation concrète (croissance/décroissance type bactéries), identifier raison/premier terme d'une suite géométrique
+- Vigilance : ne pas confondre e^x toujours positif avec son signe de variation (qui dépend de k) ; bien factoriser la dérivée par e^x avant d'étudier son signe ; e^x ne s'annule jamais (pas de solution e^x=0)`
+},
+{
+  id: '1-7',
+  title:'Trigonométrie',
+  urls: ['https://www.maths-et-tiques.fr/telech/19TrigoP1M.pdf', 'https://www.maths-et-tiques.fr/telech/19TrigoP2M.pdf'],
+  summary:`Chapitre : Trigonométrie - cercle trigonométrique, radian, cos/sin (1re)
+- Cercle trigonométrique : centre O, rayon 1, sens direct (trigonométrique) = sens inverse des aiguilles d'une montre
+- Radian : tour complet = 360° = 2π rad ; correspondances usuelles 30°=π/6, 45°=π/4, 60°=π/3, 90°=π/2, 180°=π ; conversion par proportionnalité
+- Angle orienté : un même point du cercle correspond à plusieurs mesures (ajout/retrait de 2π) ; mesure principale = unique mesure dans ]-π;π]
+- Définitions cos(x)/sin(x) : abscisse/ordonnée du point M associé au réel x sur le cercle trigonométrique
+- Propriétés : -1≤cos(x)≤1, -1≤sin(x)≤1 ; cos²(x)+sin²(x)=1 (via Pythagore dans OHM) ; notation sin²(x) pour (sin(x))²
+- Valeurs remarquables à connaître par cœur : x=0,π/6,π/4,π/3,π/2 avec cos et sin associés (démonstrations de sin(π/4)=√2/2 et cos(π/3)=1/2,sin(π/3)=√3/2 au programme, via triangle isocèle/équilatéral)
+- Lecture sur le cercle : symétries pour déduire cos/sin d'angles associés (axe des abscisses, axe des ordonnées, origine)
+- Notations : cos(x), sin(x), radian, π, mesure principale, intervalle ]-π;π] ou [0;2π]
+- Types de problèmes : conversion degrés/radians, placer un point sur le cercle (réduire un angle en ajoutant/retirant des multiples de 2π), lire une valeur exacte de cos/sin par symétrie, résoudre une équation trigonométrique simple (cos(x)=k ou sin(x)=k sur un intervalle donné), déterminer la mesure principale d'un angle
+- Vigilance : bien identifier le sens (direct/indirect) et le nombre de tours complets avant de réduire un angle ; pour une équation trigo, ne pas oublier toutes les solutions dans l'intervalle (symétries multiples) ; mesure principale = non exigible au programme mais utile pour comprendre`
+},
+{
+  id: '1-8',
+  title:'Les produits scalaires',
+  urls: ['https://www.maths-et-tiques.fr/telech/19Prodscal1M.pdf', 'https://www.maths-et-tiques.fr/telech/19Prodscal2M.pdf'],
+  summary:`Chapitre : Produit scalaire (1re)
+- Définitions : norme ||AB⃗|| = AB ; produit scalaire AB⃗.AC⃗ = AB×AC×cos(BAC) ; AB⃗.AB⃗ = AB²
+- Propriétés : symétrie u⃗.v⃗=v⃗.u⃗, bilinéarité, identités remarquables (u⃗+v⃗)²=u⃗²+2u⃗.v⃗+v⃗², (u⃗+v⃗).(u⃗-v⃗)=u⃗²-v⃗²
+- Formule avec normes : AB⃗.AC⃗ = 1/2(AB²+AC²-BC²)
+- Théorème d'Al Kashi : a²=b²+c²-2bc cos(Â), pour calculer longueur ou angle dans un triangle quelconque
+- Orthogonalité : u⃗.v⃗=0 ⟺ u⃗ et v⃗ orthogonaux ; projeté orthogonal H sur (OA) : OA⃗.OB⃗ = OA⃗.OH⃗
+- Ensemble des points M tel que MA⃗.MB⃗=0 est le cercle de diamètre [AB] (démonstration au programme)
+- Repère orthonormé : u⃗(x,y), v⃗(x',y') ⟹ u⃗.v⃗ = xx'+yy' ; utilisé pour prouver perpendicularité ou calculer un angle
+- Notations : u⃗.v⃗, ||u⃗||, cos, vecteurs en coordonnées (x;y)
+- Types de problèmes : calcul produit scalaire (cosinus/normes/projection/coordonnées), longueur/angle via Al Kashi, démonstration orthogonalité ou perpendicularité, ensembles de points
+- Vigilance : produit scalaire = nombre réel (jamais vecteur nul) ; bien identifier l'origine commune avant projection ; ne pas confondre a,b,c (côtés) avec sommets opposés dans Al Kashi`
+},
+{
+  id: '1-9',
+  title:'Géométrie repérée',
+  urls: ['https://www.maths-et-tiques.fr/telech/19RepM.pdf'],
+  summary:`Chapitre : Géométrie repérée (1re)
+- Rappels : vecteur directeur de ax+by+c=0 est u⃗(-b,a) ; colinéarité u⃗(x,y),v⃗(x',y') ⟺ xy'-yx'=0 ; AB=√((xB-xA)²+(yB-yA)²) ; milieu = ((xA+xB)/2,(yA+yB)/2)
+- Équation cartésienne de droite : forme ax+by+c=0, via point+vecteur directeur (colinéarité AM,u⃗) ou point+vecteur normal (orthogonalité AM,n⃗)
+- Vecteur normal : non nul, orthogonal à un vecteur directeur ; si ax+by+c=0 alors n⃗(a,b) normal et u⃗(-b,a) directeur
+- Projeté orthogonal H d'un point sur une droite d : construire (AH) perpendiculaire à d (vecteur directeur de d = normal de (AH)), puis résoudre le système des 2 équations
+- Équation de cercle de centre A(x0,y0) et rayon r : (x-x0)²+(y-y0)²=r² ; rayon² obtenu via AM²=r² (formule distance)
+- Reconnaître un cercle : x²+y²+ax+by+c=0 ⟹ mise sous forme canonique par complétion du carré pour chaque variable
+- Notations : u⃗(x,y) vecteur directeur, n⃗(a,b) vecteur normal, équation ax+by+c=0
+- Types de problèmes : équation de droite (point+directeur ou point+normal), perpendicularité, projeté orthogonal, équation de cercle, identification centre/rayon depuis forme développée
+- Vigilance : ne pas confondre vecteur directeur (-b,a) et vecteur normal (a,b) ; bien choisir +1 et +25 (pas -1/-25) lors de la complétion du carré ; vérifier que le rayon² obtenu est positif sinon ce n'est pas un cercle`
+},
+{
+  id: '1-10',
+  title:'Probabilités conditionnelles et indépendance',
+  urls: ['https://www.maths-et-tiques.fr/telech/19CondPM.pdf'],
+  summary:`Chapitre : Probabilités conditionnelles et indépendance (1re)
+- Définitions : probabilité conditionnelle PA(B) ; épreuve de Bernoulli (2 issues : succès/échec) ; expériences identiques et indépendantes (mêmes issues, mêmes probabilités)
+- Formule : PA(B) = P(A∩B)/P(A) ; PA(non B) = 1-PA(B) ; P(A∩B) = P(A)×PA(B)
+- Probabilités totales : P(B) = P(A∩B) + P(A̅∩B), à partir d'un arbre pondéré complet
+- Indépendance : A,B indépendants ⟺ P(A∩B)=P(A)×P(B) ⟺ PA(B)=P(B) ; si A,B indépendants alors A̅,B aussi
+- Répétition de n épreuves de Bernoulli identiques/indépendantes : probabilité d'une issue précise = produit des probabilités le long du chemin de l'arbre ; pour "k succès parmi n", sommer les chemins favorables (ex. 3×p²×(1-p) pour 2 succès sur 3 répétitions)
+- Notations : PA(B), A∩B, A∪B, A̅ (complémentaire), arbre pondéré (1er niveau = P(A), 2e niveau = probas conditionnelles sauf répétition d'expériences où ce sont des probas simples)
+- Types de problèmes : calcul à partir d'un tableau croisé, calcul via formule, construction/lecture d'arbre pondéré, probabilités totales (test médical/diagnostic), démonstration d'indépendance, calcul sur répétition d'épreuves de Bernoulli
+- Vigilance : ne pas confondre proba conditionnelle et proba d'intersection ; dans une répétition avec remise, le 2e niveau de l'arbre n'est PAS une proba conditionnelle (contrairement à un arbre classique) ; bien identifier numérateur/dénominateur dans PA(B)`
+},
+{
+  id: '1-11',
+  title:'Variables aléatoires',
+  urls: ['https://www.maths-et-tiques.fr/telech/19vaPM.pdf'],
+  summary:`Chapitre : Variables aléatoires (1re)
+- Définition : variable aléatoire X associe un nombre réel à chaque issue de l'univers des possibles E
+- Loi de probabilité : pour X prenant les valeurs x1,...,xn, donnée par toutes les P(X=xi) ; somme des probabilités = 1
+- Espérance : E(X) = p1x1+p2x2+...+pnxn
+- Variance : V(X) = p1(x1-E(X))²+p2(x2-E(X))²+...+pn(xn-E(X))²
+- Écart-type : σ(X) = √V(X)
+- Linéarité : E(aX+b) = aE(X)+b ; V(aX+b) = a²V(X) (non exigible) ; utile pour simplifier des calculs (changement de variable Y=aX+b)
+- Notations : X, xi (valeurs prises), P(X=xi) ou pi, E(X), V(X), σ(X)
+- Types de problèmes : calculer P(X=valeur) ou P(X≤valeur) à partir d'une situation concrète (jeu, gain/perte) ; établir une loi de probabilité complète (ex. dénombrement avec deux dés) ; calculer espérance/variance/écart-type et les interpréter (gain moyen espéré) ; utiliser la linéarité pour simplifier un calcul d'espérance/variance
+- Vigilance : bien dénombrer toutes les issues possibles avant d'établir la loi (ne pas oublier les cas cumulés, ex. roi de cœur = cœur ET roi) ; l'espérance s'interprète comme une moyenne sur un grand nombre de répétitions, pas un résultat individuel ; vérifier que la somme des P(X=xi) vaut bien 1`
 }
         ],
       },
@@ -153,6 +245,30 @@ export const CURRICULUM = [
         id: 'tale',
         label: 'Terminale',
         chapters: [
+          // {
+//   id: '1-9',
+//   title:'',
+//   urls: [],
+//   summary:``
+// },
+// {
+//   id: '1-9',
+//   title:'',
+//   urls: [],
+//   summary:``
+// },
+// {
+//   id: '1-9',
+//   title:'',
+//   urls: [],
+//   summary:``
+// },
+// {
+//   id: '1-9',
+//   title:'',
+//   urls: [],
+//   summary:``
+// },
             
         ],
       },
